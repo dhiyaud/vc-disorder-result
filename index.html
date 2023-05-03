@@ -16,80 +16,113 @@
 				<p><b>Details:</b></p>
 				<ul>
 					<li><p><b>GT:</b> Ground Truth</p></li>
-					<li><p><b>BC:</b> Baseline</p></li>
-					<li><p><b>P1:</b> Train the Voice Cloning encoder (GE2E) with additional speech disorders data</p></li>
-					<li><p><b>P2:</b> Use experiment <b>P1</b> + speaker conditional in vocoder (WaveRNN)</p></li>
-					<li><p><b>P3:</b> Use HiFi-GAN as vocoder</p></li>
+					<li><p><b>P1:</b> Baseline, VCTK</p></li>
+					<li><p><b>P2:</b> Baseline, VCTK + UncommonVoice</p></li>
+					<li><p><b>P3:</b> Proposed, VCTK + UncommonVoice</p></li>
 			</ul>
 			</div>
-			<!-- <h2>Example Synthesis of a Sentence in Different Voices</h2>
-      <p><i>We compare the same sentence synthesized using different speaker embeddings.</i></p>
-      <p><i>These examples correspond to Figure 2 in the paper. The mel spectrograms are visualized for reference utterances used to generate speaker embeddings (left), and the corresponding synthesizer outputs (right). The text-to-spectrogram alignment is shown in red. Three speakers held out of the train sets are used: one male (top) and two female (center and bottom).</i></p> -->
-			
-			<p><b>Synthesized text:</b> just focus on the similarity of the speakers to one another</p>
 
 			<table>
 				<thead>
 					<tr>
-						<th>Speaker</th><th>GT</th><th>BC</th><th>P1</th><th>P2</th><th>P3</th>
+						<th>Speaker</th><th>GT</th><th>P1</th><th>P2</th><th>P3</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td><span><b>FD015_T2_si1037_139</b></span><br></td>
-						<td><audio controls=""><source src="Samples/uncommon/FD015_T2_si1037_139.wav" type="audio/wav"></audio></td>
-						<td><audio controls=""><source src="Results/disorder/uncommon_base/FD015_T2_si1037_139_demo_output.wav" type="audio/wav"></audio></td>
-						<td><audio controls=""><source src="Results/disorder/uncommon_retrain_1/1_FD015_T2_si1037_139_demo_output.wav" type="audio/wav"></audio></td>
-						<td><audio controls=""><source src="Results/disorder/uncommon_retrain_vocoder_2/2_FD015_T2_si1037_139_demo_output.wav" type="audio/wav"></audio></td>
-						<td><audio controls=""><source src="Results/disorder/uncommon_wifigan_3/3_FD015_T2_si1037_139_demo_output.wav" type="audio/wav"></audio></td>
+						<td><span><b>FD015</b></span><br></td>
 					</tr>
 					<tr>
-						<td><span><b>FD032_T2_si458_NA</b></span><br></td>
-						<td><audio controls=""><source src="Samples/uncommon/FD032_T2_si458_NA.wav" type="audio/wav"></audio></td>
-						<td><audio controls=""><source src="Results/disorder/uncommon_base/FD032_T2_si458_NA_demo_output.wav" type="audio/wav"></audio></td>
-						<td><audio controls=""><source src="Results/disorder/uncommon_retrain_1/1_FD032_T2_si458_NA_demo_output.wav" type="audio/wav"></audio></td>
-						<td><audio controls=""><source src="Results/disorder/uncommon_retrain_vocoder_2/2_FD032_T2_si458_NA_demo_output.wav" type="audio/wav"></audio></td>
-						<td><audio controls=""><source src="Results/disorder/uncommon_wifigan_3/3_FD032_T2_si458_NA_demo_output.wav" type="audio/wav"></audio></td>
+						<td style="max-width: 500px;"><span>who told you to do it</span><br></td>
+						<td><audio controls=""><source src="Demo/FD015/GT/FD015_si1949.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/FD015/1/FD015_si1949.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/FD015/2/FD015_si1949.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/FD015/3/FD015_si1949.wav" type="audio/wav"></audio></td>
 					</tr>
 					<tr>
-						<td><span><b>FD034_T2_si1055_NA</b></span><br></td>
-						<td><audio controls=""><source src="Samples/uncommon/FD034_T2_si1055_NA.wav" type="audio/wav"></audio></td>
-						<td><audio controls=""><source src="Results/disorder/uncommon_base/FD034_T2_si1055_NA_demo_output.wav" type="audio/wav"></audio></td>
-						<td><audio controls=""><source src="Results/disorder/uncommon_retrain_1/1_FD034_T2_si1055_NA_demo_output.wav" type="audio/wav"></audio></td>
-						<td><audio controls=""><source src="Results/disorder/uncommon_retrain_vocoder_2/2_FD034_T2_si1055_NA_demo_output.wav" type="audio/wav"></audio></td>
-						<td><audio controls=""><source src="Results/disorder/uncommon_wifigan_3/3_FD034_T2_si1055_NA_demo_output.wav" type="audio/wav"></audio></td>
+						<td style="max-width: 500px;"><span>the previous speaker presented ambiguous results</span><br></td>
+						<td><audio controls=""><source src="Demo/FD015/GT/FD015_sx151.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/FD015/1/FD015_sx151.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/FD015/2/FD015_sx151.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/FD015/3/FD015_sx151.wav" type="audio/wav"></audio></td>
 					</tr>
 					<tr>
-						<td><span><b>FD046_T2_si1927_NA</b></span><br></td>
-						<td><audio controls=""><source src="Samples/uncommon/FD046_T2_si1927_NA.wav" type="audio/wav"></audio></td>
-						<td><audio controls=""><source src="Results/disorder/uncommon_base/FD046_T2_si1927_NA_demo_output.wav" type="audio/wav"></audio></td>
-						<td><audio controls=""><source src="Results/disorder/uncommon_retrain_1/1_FD046_T2_si1927_NA_demo_output.wav" type="audio/wav"></audio></td>
-						<td><audio controls=""><source src="Results/disorder/uncommon_retrain_vocoder_2/2_FD046_T2_si1927_NA_demo_output.wav" type="audio/wav"></audio></td>
-						<td><audio controls=""><source src="Results/disorder/uncommon_wifigan_3/3_FD046_T2_si1927_NA_demo_output.wav" type="audio/wav"></audio></td>
+						<td style="max-width: 500px;"><span>coffee is grown on steep jungle like slopes in temperate zones</span><br></td>
+						<td><audio controls=""><source src="Demo/FD015/GT/FD015_sx432.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/FD015/1/FD015_sx432.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/FD015/2/FD015_sx432.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/FD015/3/FD015_sx432.wav" type="audio/wav"></audio></td>
 					</tr>
 					<tr>
-						<td><span><b>MD06_T2_si2028_NA</b></span><br></td>
-						<td><audio controls=""><source src="Samples/uncommon/MD06_T2_si2028_NA.wav" type="audio/wav"></audio></td>
-						<td><audio controls=""><source src="Results/disorder/uncommon_base/MD06_T2_si2028_NA_demo_output.wav" type="audio/wav"></audio></td>
-						<td><audio controls=""><source src="Results/disorder/uncommon_retrain_1/1_MD06_T2_si2028_NA_demo_output.wav" type="audio/wav"></audio></td>
-						<td><audio controls=""><source src="Results/disorder/uncommon_retrain_vocoder_2/2_MD06_T2_si2028_NA_demo_output.wav" type="audio/wav"></audio></td>
-						<td><audio controls=""><source src="Results/disorder/uncommon_wifigan_3/3_MD06_T2_si2028_NA_demo_output.wav" type="audio/wav"></audio></td>
+						<td style="max-width: 500px;"><span>*just focus on the similarity of the speaker to one another*</span><br></td>
+						<td><audio controls=""><source src="Demo/FD015/GT/FD015_si1037.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/FD015/1/FD015_si1037.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/FD015/2/FD015_si1037.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/FD015/3/FD015_si1037.wav" type="audio/wav"></audio></td>
+					</tr>
+
+					<tr>
+						<td><span><b>FD046</b></span><br></td>
 					</tr>
 					<tr>
-						<td><span><b>MD09_T2_si516_NA</b></span><br></td>
-						<td><audio controls=""><source src="Samples/uncommon/MD09_T2_si516_NA.wav" type="audio/wav"></audio></td>
-						<td><audio controls=""><source src="Results/disorder/uncommon_base/MD09_T2_si516_NA_demo_output.wav" type="audio/wav"></audio></td>
-						<td><audio controls=""><source src="Results/disorder/uncommon_retrain_1/1_MD09_T2_si516_NA_demo_output.wav" type="audio/wav"></audio></td>
-						<td><audio controls=""><source src="Results/disorder/uncommon_retrain_vocoder_2/2_MD09_T2_si516_NA_demo_output.wav" type="audio/wav"></audio></td>
-						<td><audio controls=""><source src="Results/disorder/uncommon_wifigan_3/3_MD09_T2_si516_NA_demo_output.wav" type="audio/wav"></audio></td>
+						<td style="max-width: 500px;"><span>some observers speculated that this might be his revenge on his home town</span><br></td>
+						<td><audio controls=""><source src="Demo/FD046/GT/FD046_si516.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/FD046/1/FD046_si516.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/FD046/2/FD046_si516.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/FD046/3/FD046_si516.wav" type="audio/wav"></audio></td>
 					</tr>
 					<tr>
-						<td><span><b>MD015_T2_si1982_NA</b></span><br></td>
-						<td><audio controls=""><source src="Samples/uncommon/MD015_T2_si1982_NA.wav" type="audio/wav"></audio></td>
-						<td><audio controls=""><source src="Results/disorder/uncommon_base/MD015_T2_si1982_NA_demo_output.wav" type="audio/wav"></audio></td>
-						<td><audio controls=""><source src="Results/disorder/uncommon_retrain_1/1_MD015_T2_si1982_NA_demo_output.wav" type="audio/wav"></audio></td>
-						<td><audio controls=""><source src="Results/disorder/uncommon_retrain_vocoder_2/2_MD015_T2_si1982_NA_demo_output.wav" type="audio/wav"></audio></td>
-						<td><audio controls=""><source src="Results/disorder/uncommon_wifigan_3/3_MD015_T2_si1982_NA_demo_output.wav" type="audio/wav"></audio></td>
+						<td style="max-width: 500px;"><span>his election on the other hand would unquestionably strengthen the regulars</span><br></td>
+						<td><audio controls=""><source src="Demo/FD046/GT/FD046_si530.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/FD046/1/FD046_si530.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/FD046/2/FD046_si530.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/FD046/3/FD046_si530.wav" type="audio/wav"></audio></td>
+					</tr>
+					<tr>
+						<td style="max-width: 500px;"><span>if any of us miss they can pick up the pieces</span><br></td>
+						<td><audio controls=""><source src="Demo/FD046/GT/FD046_si1969.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/FD046/1/FD046_si1969.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/FD046/2/FD046_si1969.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/FD046/3/FD046_si1969.wav" type="audio/wav"></audio></td>
+					</tr>
+					<tr>
+						<td style="max-width: 500px;"><span>*just focus on the similarity of the speaker to one another*</span><br></td>
+						<td><audio controls=""><source src="Demo/FD046/GT/FD046_si1927.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/FD046/1/FD046_si1927.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/FD046/2/FD046_si1927.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/FD046/3/FD046_si1927.wav" type="audio/wav"></audio></td>
+					</tr>
+
+					<tr>
+						<td><span><b>MD09</b></span><br></td>
+					</tr>
+					<tr>
+						<td style="max-width: 500px;"><span>this is not a program of socialized medicine</span><br></td>
+						<td><audio controls=""><source src="Demo/MD09/GT/MD09_si458.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/MD09/1/MD09_si458.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/MD09/2/MD09_si458.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/MD09/3/MD09_si458.wav" type="audio/wav"></audio></td>
+					</tr>
+					<tr>
+						<td style="max-width: 500px;"><span>it also provides for funds to clear slums and help colleges build dormitories</span><br></td>
+						<td><audio controls=""><source src="Demo/MD09/GT/MD09_si462.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/MD09/1/MD09_si462.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/MD09/2/MD09_si462.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/MD09/3/MD09_si462.wav" type="audio/wav"></audio></td>
+					</tr>
+					<tr>
+						<td style="max-width: 500px;"><span>in a way he couldn't blame her</span><br></td>
+						<td><audio controls=""><source src="Demo/MD09/GT/MD09_si2003.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/MD09/1/MD09_si2003.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/MD09/2/MD09_si2003.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/MD09/3/MD09_si2003.wav" type="audio/wav"></audio></td>
+					</tr>
+					<tr>
+						<td style="max-width: 500px;"><span>*just focus on the similarity of the speaker to one another*</span><br></td>
+						<td><audio controls=""><source src="Demo/MD09/GT/MD09_si516.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/MD09/1/MD09_si516.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/MD09/2/MD09_si516.wav" type="audio/wav"></audio></td>
+						<td><audio controls=""><source src="Demo/MD09/3/MD09_si516.wav" type="audio/wav"></audio></td>
 					</tr>
 				</tbody>
 			</table>
